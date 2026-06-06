@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-# Hello, I'm Martin Njoroge 👋
+## Hello, I'm Martin Njoroge 👋
 
 Welcome to my corner of the internet! I am a software engineer focused on building robust backend systems in the fintech space and ensuring best security practices 
 
