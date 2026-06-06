@@ -67,7 +67,7 @@ These are protective measures safeguarding financial data during transactions. I
 
 - Settlement refers to the final transfer of funds in a payment transaction where money moves from the buyer’s issuing bank to the seller’s acquiring bank, minus any fees.
 
-![Reconciliation](../assets/img/Introduction-To-Payments/reconciliation_img.pngIntroduction-To-Payments/reconcilliation_img.png)
+![Reconciliation](../assets/img/Introduction-To-Payments/reconciliation_img.png)
 
 - Reconciliation is matching payment records to confirm consistency among internal accounts, bank statements, and processor reports. It identifies issues like mismatches and fraud after settlement.
 
