@@ -5,10 +5,6 @@ categories: [Payments, Architecture, Banking, Systems]
 tags: [Payments, Architecture, Banking]
 ---
 
-
-## Introduction
-Your article content goes here...
-
 # Introduction To Payments
 
 ## **Introduction**
