@@ -1,4 +1,4 @@
-Mar
+Markdown
 
 ---
 title: Introduction To Payments
