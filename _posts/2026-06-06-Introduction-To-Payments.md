@@ -67,15 +67,15 @@ These are protective measures safeguarding financial data during transactions. I
 
 - Settlement refers to the final transfer of funds in a payment transaction where money moves from the buyer’s issuing bank to the seller’s acquiring bank, minus any fees.
 
-![Reconciliation](../img/Introduction-To-Payments/reconciliation_img.pngIntroduction-To-Payments/reconcilliation_img.png)
+![Reconciliation](../assets/img/Introduction-To-Payments/reconciliation_img.pngIntroduction-To-Payments/reconcilliation_img.png)
 
 - Reconciliation is matching payment records to confirm consistency among internal accounts, bank statements, and processor reports. It identifies issues like mismatches and fraud after settlement.
 
-![Settlement](../img/Introduction-To-Payments/settlement_img.png)
+![Settlement](../assets/img/Introduction-To-Payments/settlement_img.png)
 
 To get a clear picture of how the entire process works, here is a design showing how money flows to the receiver.
 
-![Payment Architecture](../img/Introduction-To-Payments/payment_system_architecture.png)
+![Payment Architecture](../assets/img/Introduction-To-Payments/payment_system_architecture.png)
 
 Here is how money moves in the system. The customer initiates the transaction. It can be through a Point of Sale (POS) system at a mall or through a website. Then the payment gateway encrypts the customer data and forwards it to the payment processor. The payment processor communicates with the bank and forwards the customer data. 
 
