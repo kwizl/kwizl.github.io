@@ -1,11 +1,13 @@
-Markdown
-
 ---
 title: Introduction To Payments
 date: 2026-06-06 13:30:00 +0300
 categories: [Payments, Architecture, Banking, Systems]
 tags: [Payments, Architecture, Banking]
 ---
+
+
+## Introduction
+Your article content goes here...
 
 # Introduction To Payments
 
