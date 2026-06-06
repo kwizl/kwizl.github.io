@@ -1,12 +1,3 @@
-YAML
-
----
-title: Introduction To Payments
-date: 2026-06-06 13:30:00 +0300
-categories: [Blogging, Systems]
-tags: [Payments, Architecture, Banking]
----
-
 # Introduction To Payments
 
 ## **Introduction**
