@@ -5,9 +5,6 @@ categories: [Payments, Banking]
 tags: [Finance, Banking]
 ---
 
-# Types of Bank Accounts
-
-Created time: February 9, 2026 12:14 PM
 
 ## **Overview**
 
