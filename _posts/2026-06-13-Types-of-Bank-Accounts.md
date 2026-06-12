@@ -1,6 +1,6 @@
 ---
 title: Types of Bank Accounts
-date: 2026-06-06 13:30:00 +0300
+date: 2026-06-13 0:12:00 +0300
 categories: [Payments, Banking]
 tags: [Finance, Banking]
 ---
