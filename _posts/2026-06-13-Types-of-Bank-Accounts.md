@@ -12,8 +12,6 @@ In this article, we will be looking at how money moves from one person’s accou
 
 ![AccountToAccount.png](../assets/img/Types-of-Bank-Accounts/AccountToAccount.png)
 
-![BankToBank.png](../assets/img/Types-of-Bank-Accounts/BankToBank.png)
-
 ### **Types of Accounts**
 
 **Demand Deposit Account**
