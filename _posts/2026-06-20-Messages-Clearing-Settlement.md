@@ -192,6 +192,7 @@ The steps it follows are:
 Banks send payment instructions to a central clearing house. The clearing house records who owes what.
 
 **2. Netting**
+
 At a designated cut-off time, such as End of Day(EOD) the clearing house calculates the net position of each participant.
 
 **3. Settlement**
