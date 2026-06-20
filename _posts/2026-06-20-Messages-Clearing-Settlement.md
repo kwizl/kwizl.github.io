@@ -5,10 +5,6 @@ categories: [Payments, Banking]
 tags: [Finance, Banking]
 ---
 
-# Messages, Clearing & Settlement
-
-Created time: February 23, 2026 2:37 PM
-
 ## INTRODUCTION
 
 In this article, we will cover Messages, Clearing, and Settlements. These are steps or processes that your money undergoes in order to facilitate its movement from one bank to another while ensuring correctness. By the end of this article, we will have an understanding of how money is handled as it moves from your bank to another bank.
@@ -191,15 +187,14 @@ Here is a detailed breakdown of how it works, its architecture, and its risk pro
 
 The steps it follows are:
 
-1. **Clearing**
+**1. Clearing**
 
 Banks send payment instructions to a central clearing house. The clearing house records who owes what.
 
-2. **Netting**
-
+**2. Netting**
 At a designated cut-off time, such as End of Day(EOD) the clearing house calculates the net position of each participant.
 
-3. **Settlement**
+**3. Settlement**
 
 The final net balances are settled across the books of a central bank. Net debtors(The party or institution that owes many or has a negative account balance) must fund their accounts to pay out, while net creditors(The party owed money) receive their net earnings.
 
