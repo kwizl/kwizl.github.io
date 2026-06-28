@@ -5,7 +5,7 @@ categories: [Payments, Banking]
 tags: [Finance, Banking]
 ---
 
-## INTRODUCTION
+## **Introduction**
 
 In this article, we will cover Messages, Clearing, and Settlements. These are steps or processes that your money undergoes in order to facilitate its movement from one bank to another while ensuring correctness. By the end of this article, we will have an understanding of how money is handled as it moves from your bank to another bank.
 
