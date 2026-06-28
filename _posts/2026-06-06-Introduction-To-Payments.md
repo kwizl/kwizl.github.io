@@ -5,8 +5,6 @@ categories: [Payments, Architecture, Banking, Systems]
 tags: [Payments, Architecture, Banking]
 ---
 
-# Introduction To Payments
-
 ## **Introduction**
 
 This will be the beginning of a series that dives deep into the Banking and Payments sector. Since money is part and parcel of our lives, everyone ought to know how their money moves whenever they make a purchase or a sale. In this article, we will provide a brief overview of how payments operate behind the scenes, from the moment you swipe your card to the moment the money ends up in the other involved party’s account. 
