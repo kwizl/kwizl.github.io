@@ -25,6 +25,7 @@ It is the process by which a bank or financial institution processes credit or d
 |                             |                     |                                                                      |
 | **Acquirer Markup**         | **Acquirer / PSP**  | The fee charged by the acquiring bank for providing the processing   |
 |                             |                     | services, hardware, and handling risks.                              |
+| --------------------------- | ------------------- | ---------------------------------------------------------------------|
 
 ## Payment Hub
 
