@@ -16,7 +16,7 @@ It is the process by which a bank or financial institution processes credit or d
 #### Acquisition Fees
 
 | **Fee Component**           | **Paid To**         | **Description**                                                      |
-| --------------------------- | ------------------- | ---------------------------------------------------------------------|
+| --------------------------- | ------------------- | -------------------------------------------------------------------- |
 | **Interchange Fee**         | **Issuer**          | The largest portion of the fee. Set by the schemes but paid to the   |
 |                             |                     | customer's bank to cover credit risk and fraud management.           |
 |                             |                     |                                                                      |
@@ -25,7 +25,7 @@ It is the process by which a bank or financial institution processes credit or d
 |                             |                     |                                                                      |
 | **Acquirer Markup**         | **Acquirer / PSP**  | The fee charged by the acquiring bank for providing the processing   |
 |                             |                     | services, hardware, and handling risks.                              |
-| --------------------------- | ------------------- | ---------------------------------------------------------------------|
+| --------------------------- | ------------------- | -------------------------------------------------------------------- |
 
 ## Payment Hub
 
