@@ -124,33 +124,32 @@ For engineering teams maintaining outward transaction systems, performance monit
 
 - **STP Rate (Straight-Through Processing):** The percentage of outward payments that pass from the channel to the rail entirely automatically without triggering manual compliance or technical validation exceptions. Enterprise banks target an STP rate greater than **95-98%**.
 - **End-to-End Latency:** For instant rails, the target window to pull a payload from an API, run compliance, hold ledger balances, transform the schema, and dispatch it is often under **500 milliseconds**.
-- **Reconciliation Match-Rate:** The accuracy with which the outbound payment ledger matches the end-of-day statement files (`camt.053`) provided by central settlement networks.
+- **Reconciliation Match-Rate:** The accuracy with which the outbound payment ledger matches the end-of-day statement files provided by central settlement networks.
 
 ## Inward Transactions
 
 This is also known as an incoming payment, which occurs when an external financial institution routes funds onto your bank's network to be credited to one of your customers.
 Inward processing is all about safely receiving a message from an external clearing rail, validating the targeted account, handling regulatory compliance, and executing a precise ledger post. Inward transactions must be designed defensively because the bank does not control the ingress rate or format quality of external originators.
-****
 
-**Processing Pipeline**
+### Processing Pipeline
 When a clearing network (like an RTGS switch, an ACH operator, or a regional instant payment rail) delivers a payment message to a bank, it flows through a sequential, real-time pipeline.
 
 **1. Ingress & Parsing**
 
 The bank’s gateway receives the network message (e.g., an **ISO 20022 `pacs.008`** message or a legacy **SWIFT MT103** file). The network adapter parses the binary or XML stream into the bank's internal canonical transaction model.
 
-**2. Beneficiary Account Verification:**
+**2. Beneficiary Account Verification**
 
-The engine queries the account sub-system to ensure the target account exists and can receive funds. It checks:
-• Is the account active or frozen/blocked?
-• Does the account type allow this currency?
-• **Name Matching:** Advanced ML models compare the incoming beneficiary name string with the legal name on the bank account to prevent accidental misrouting.
+The engine queries the account sub-system to ensure the target account exists and can receive funds. It checks:\
+• Is the account active or frozen/blocked?\
+• Does the account type allow this currency?\
+• Name Matching. Advanced ML models compare the incoming beneficiary name string with the legal name on the bank account to prevent accidental misrouting.
 
 **3. Inward Compliance & AML Screening**
 
 Even though the sender's bank already ran compliance, the receiving bank is legally responsible for everything it lets into its ledger. The payload is checked against international sanctions, PEP (Politically Exposed Persons) databases, and local anti-money laundering velocity thresholds.
 
-**4.Liquidity & Settlement Posting**
+**4. Liquidity & Settlement Posting**
 
 The engine checks the bank's central clearing account position (e.g., its ledger balance at the Central Bank). If the clearing network has already settled the funds into the bank's master position, the hub proceeds to allocate those funds.
 
