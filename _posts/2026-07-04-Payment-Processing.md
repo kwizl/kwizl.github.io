@@ -17,9 +17,12 @@ It is the process by which a bank or financial institution processes credit or d
 
 | **Fee Component**           | **Paid To**         | **Description** |
 | --- | --- | --- |
-| **Interchange Fee**         | **Issuer**          | The largest portion of the fee. Set by the schemes but paid to the customer's bank to cover credit risk and fraud management. |
-| **Assessment / Scheme Fee** | **Card Network**    | Paid to Visa/Mastercard for operating the global network infrastructure.                                                      |
-| **Acquirer Markup**         | **Acquirer / PSP**  | The fee charged by the acquiring bank for providing the processing services, hardware, and handling risk.                     |
+| **Interchange Fee**         | **Issuer**          | The largest portion of the fee. Set by the schemes but paid to the 
+                                                      customer's bank to cover credit risk and fraud management.         |
+| **Assessment / Scheme Fee** | **Card Network**    | Paid to Visa/Mastercard for operating the global network 
+                                                      infrastructure.                                                    |
+| **Acquirer Markup**         | **Acquirer / PSP**  | The fee charged by the acquiring bank for providing the 
+                                                      processing services, hardware, and handling risk.                  |
 
 ## Payment Hub
 
