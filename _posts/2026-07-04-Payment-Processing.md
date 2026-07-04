@@ -13,7 +13,7 @@ In this article, we will look at Payment Processing. Payment processing in banki
 
 It is the process by which a bank or financial institution processes credit or debit card transactions on behalf of a merchant, ensuring that funds are securely captured from the customer's bank and deposited into the merchant’s account.
 
-**Acquisition Fees**
+#### Acquisition Fees
 
 | **Fee Component**           | **Paid To**         | **Description**                                                      |
 | --------------------------- | ------------------- | ---------------------------------------------------------------------|
