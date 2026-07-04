@@ -1,6 +1,6 @@
 ---
 title: Payment Processing
-date: 2026-06-27 10:30:00 +0300
+date: 2026-07-04 12:30:00 +0300
 categories: [Payments, Banking]
 tags: [Finance, Banking]
 ---
