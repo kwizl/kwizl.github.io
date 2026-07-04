@@ -15,16 +15,16 @@ It is the process by which a bank or financial institution processes credit or d
 
 **Acquisition Fees**
 
-| **Fee Component**           | **Paid To**         | **Description**                                                                                                               |
-| --------------------------- | ------------------- | ----------------------------------------------------------------------------|
-| **Interchange Fee**         | **Issuer**          | The largest portion of the fee. Set by the schemes but paid to the customer |
-|                             |                     | customer's bank to cover credit risk and fraud management.                  |
-|                             |                     |                                                                             |
-| **Assessment / Scheme Fee** | **Card Network**    | Paid to Visa/Mastercard for operating the global network infrastructure     |
-|                             |                     | infrastructure.                                                             |
-|                             |                     |                                                                             |
-| **Acquirer Markup**         | **Acquirer / PSP**  | The fee charged by the acquiring bank for providing the processing services,|
-|                             |                     | hardware, and handling risks.                                               |
+| **Fee Component**           | **Paid To**         | **Description**                                                      |
+| --------------------------- | ------------------- | ---------------------------------------------------------------------|
+| **Interchange Fee**         | **Issuer**          | The largest portion of the fee. Set by the schemes but paid to the   |
+|                             |                     | customer's bank to cover credit risk and fraud management.           |
+|                             |                     |                                                                      |
+| **Assessment / Scheme Fee** | **Card Network**    | Paid to Visa/Mastercard for operating the global network             |
+|                             |                     | infrastructure.                                                      |
+|                             |                     |                                                                      |
+| **Acquirer Markup**         | **Acquirer / PSP**  | The fee charged by the acquiring bank for providing the processing   |
+|                             |                     | services, hardware, and handling risks.                              |
 
 ## Payment Hub
 
