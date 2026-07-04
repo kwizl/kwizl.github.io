@@ -140,10 +140,11 @@ The bank’s gateway receives the network message (e.g., an **ISO 20022 `pacs.00
 
 **2. Beneficiary Account Verification**
 
-The engine queries the account sub-system to ensure the target account exists and can receive funds. It checks:\
-• Is the account active or frozen/blocked?\
-• Does the account type allow this currency?\
-• Name Matching. Advanced ML models compare the incoming beneficiary name string with the legal name on the bank account to prevent accidental misrouting.
+The engine queries the account sub-system to ensure the target account exists and can receive funds. It checks:
+
+- Is the account active or frozen/blocked?\
+- Does the account type allow this currency?\
+- Name Matching. Advanced ML models compare the incoming beneficiary name string with the legal name on the bank account to prevent accidental misrouting.
 
 **3. Inward Compliance & AML Screening**
 
