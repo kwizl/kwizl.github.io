@@ -1,6 +1,6 @@
 ---
 title: Payment Processing
-date: 2026-07-04 12:30:00 +0300
+date: 2026-07-04 12:00:00 +0300
 categories: [Payments, Banking]
 tags: [Finance, Banking]
 ---
@@ -94,23 +94,23 @@ This is an outgoing payment which occurs when a customer instructs their bank to
 
 The payment enters via an intake channel (Mobile API, Corporate Host-to-Host). The bank's channel integration layer parses the incoming payload and maps it into the internal canonical format—typically an **ISO 20022 `pain.001` (Payment Initiation)** data structure.
 
-1. **Syntactic & Business Validation**
+2. **Syntactic & Business Validation**
 
 The engine checks if fields match structural schemas, validates identifiers (e.g., evaluating routing numbers like SWIFT BICs, ABA, or Sort Codes using MOD-check algorithms), and verifies that the transaction date falls within valid settlement windows.
 
-1. **Compliance Screening (AML/Sanctions)**
+3. **Compliance Screening (AML/Sanctions)**
 
 The payload is passed to the compliance engine. It runs the names of the sender and beneficiary against international sanctions lists (e.g., OFAC) and flags suspected money laundering patterns. This step must block the pipeline in real-time; any hits route the transaction to manual compliance desks.
 
-1. **Liquidity & Position Check**
+4. **Liquidity & Position Check**
 
 The system queries the Core Banking System ledger to check for available funds. If the account has sufficient balance or an approved overdraft limit, the engine places a lien (hold) on the requested funds. This prevents the customer from double-spending the money while the transaction is cleared externally.
 
-1. **Routing & Transformation**
+5. **Routing & Transformation**
 
 The routing switch chooses the optimal outbound clearing rail (RTGS for high-value/urgent, ACH for low-value/batch, or local instant rails). The internal payload is then converted into the target network protocol (e.g., an **ISO 20022 `pacs.008`** or a legacy **SWIFT MT103** message).
 
-1. **Disbursement & Posting**
+6. **Disbursement & Posting**
 
 The message is cryptographically signed and dispatched to the clearing rail. Upon receiving an acknowledgment (`ACK`) from the external network, the internal held funds are permanently debited from the customer's account, and the bank offsets this by updating its central clearing settlement ledger.
 
@@ -146,15 +146,15 @@ The engine queries the account sub-system to ensure the target account exists an
 
 Even though the sender's bank already ran compliance, the receiving bank is legally responsible for everything it lets into its ledger. The payload is checked against international sanctions, PEP (Politically Exposed Persons) databases, and local anti-money laundering velocity thresholds.
 
-1. **Liquidity & Settlement Posting**
+2. **Liquidity & Settlement Posting**
 
 The engine checks the bank's central clearing account position (e.g., its ledger balance at the Central Bank). If the clearing network has already settled the funds into the bank's master position, the hub proceeds to allocate those funds.
 
-1. **Core Ledger Credit Posting**
+3. **Core Ledger Credit Posting**
 
 The hub sends an atomic credit command to the Core Banking System (CBS). The customer’s ledger row is updated. This transaction must be processed as a database write-ahead log to prevent ledger corruption.
 
-1. **Notification & Acknowledgment**
+4. **Notification & Acknowledgment**
 
 The state machine sends a success notification event (via a message broker like Kafka) to trigger real-time channels like SMS, mobile push alerts, or email webhooks for the customer. Simultaneously, a clearing network acknowledgment (`pacs.002` status report) is returned to the rail.
 
