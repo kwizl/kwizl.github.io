@@ -177,13 +177,13 @@ From a bank's perspective, customer deposits are Liabilities (money the bank owe
 
 **Internal Mirror & Suspense Accounts**
 
-When money moves outside the bank (like an outward transaction), the ledger cannot directly credit the external bank's account. Instead, banks utilize Internal Nostro/Vostro Mirror Accounts or Suspense Accounts to maintain balance integrity:
+When money moves outside the bank (like an outward transaction), the ledger cannot directly credit the external bank's account. Instead, banks utilize Internal Nostro/Vostro Mirror Accounts or Suspense Accounts to maintain balance integrity.
 
 ![mirror_suspense_account.png](../assets/img/Payment-Processing/mirror_suspense_account.png)
 
 #### 2. The Booking Lifecycle: Memo Post vs. Hard Post
 
-To balance real-time user experiences with safe ledger processing, banks typically split booking into two distinct database phases:
+To balance real-time user experiences with safe ledger processing, banks typically split booking into two distinct database phases.
 
 ![memo_hard_post.png](../assets/img/Payment-Processing/memo_hard_post.png)
 
