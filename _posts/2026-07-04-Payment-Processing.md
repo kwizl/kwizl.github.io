@@ -94,27 +94,27 @@ This is an outgoing payment which occurs when a customer instructs their bank to
 
 #### Processing Pipeline
 
-**1.Ingress & Canonicalization**
+**1. Ingress & Canonicalization**
 
 The payment enters via an intake channel (Mobile API, Corporate Host-to-Host). The bank's channel integration layer parses the incoming payload and maps it into the internal canonical format—typically an **ISO 20022 `pain.001` (Payment Initiation)** data structure.
 
-**2.Syntactic & Business Validation**
+**2. Syntactic & Business Validation**
 
 The engine checks if fields match structural schemas, validates identifiers (e.g., evaluating routing numbers like SWIFT BICs, ABA, or Sort Codes using MOD-check algorithms), and verifies that the transaction date falls within valid settlement windows.
 
-**3.Compliance Screening (AML/Sanctions)**
+**3. Compliance Screening (AML/Sanctions)**
 
 The payload is passed to the compliance engine. It runs the names of the sender and beneficiary against international sanctions lists (e.g., OFAC) and flags suspected money laundering patterns. This step must block the pipeline in real-time; any hits route the transaction to manual compliance desks.
 
-**4.Liquidity & Position Check**
+**4. Liquidity & Position Check**
 
 The system queries the Core Banking System ledger to check for available funds. If the account has sufficient balance or an approved overdraft limit, the engine places a lien (hold) on the requested funds. This prevents the customer from double-spending the money while the transaction is cleared externally.
 
-**5.Routing & Transformation**
+**5. Routing & Transformation**
 
 The routing switch chooses the optimal outbound clearing rail (RTGS for high-value/urgent, ACH for low-value/batch, or local instant rails). The internal payload is then converted into the target network protocol (e.g., an **ISO 20022 `pacs.008`** or a legacy **SWIFT MT103** message).
 
-**6.Disbursement & Posting**
+**6. Disbursement & Posting**
 
 The message is cryptographically signed and dispatched to the clearing rail. Upon receiving an acknowledgment (`ACK`) from the external network, the internal held funds are permanently debited from the customer's account, and the bank offsets this by updating its central clearing settlement ledger.
 
