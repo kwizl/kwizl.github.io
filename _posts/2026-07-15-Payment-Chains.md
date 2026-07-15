@@ -5,10 +5,6 @@ categories: [Payments, Banking]
 tags: [Finance, Banking]
 ---
 
-# Banks & Payment Chains
-
-Created time: March 30, 2026 4:14 PM
-
 ## Introduction
 
 This mainly pertains to the architecture of payment networks. It is in this space that clearing and settlement process decisions are made.
