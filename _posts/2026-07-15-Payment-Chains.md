@@ -73,13 +73,13 @@ Because open-loop systems involve decoupled entities, a single transaction must 
 
 When a payment is initiated, the merchant's point-of-sale terminal or payment gateway formats the data into an authorization request packet. The **Acquirer** catches this payload and passes it to the **Payment Network Switch**.
 
-The switch instantly analyzes the routing transit number or bank identification number (BIN), routes the packet directly to the **Issuer** to check for fraud and fund availability, catches the approval response token, and relays it back to the merchant. The entire process occurs in milliseconds. For further details refer to the previous article on [https://kwizl.github.io/posts/Introduction-To-Payments/](https://kwizl.github.io/posts/Introduction-To-Payments/)
+The switch instantly analyzes the routing transit number or bank identification number (BIN), routes the packet directly to the **Issuer** to check for fraud and fund availability, catches the approval response token, and relays it back to the merchant. The entire process occurs in milliseconds. For further details refer to the previous article on [Payments](https://kwizl.github.io/posts/Introduction-To-Payments/)
 
 **Phase 2: Clearing & Settlement**
 
 Authorization does not move the actual money; it simply locks the funds. At the end of an operational business day, the clearing files are compiled.
 
-The payment network acts as the clearing house, calculating the net debit and credit positions across all participating banks. It then interfaces with a settlement system (typically a central bank RTGS architecture) to execute the final, irrevocable transfer of funds from the issuer’s reserve pool to the acquirer's reserve pool. For further reading on this refer to this prrevious article [https://kwizl.github.io/posts/Messages-Clearing-Settlement/](https://kwizl.github.io/posts/Messages-Clearing-Settlement/)
+The payment network acts as the clearing house, calculating the net debit and credit positions across all participating banks. It then interfaces with a settlement system (typically a central bank RTGS architecture) to execute the final, irrevocable transfer of funds from the issuer’s reserve pool to the acquirer's reserve pool. For further reading on this refer to this prrevious article [Messages, Clearing & Settlement/](https://kwizl.github.io/posts/Messages-Clearing-Settlement/)
 
 ### Actors in the Payment End to End
 
