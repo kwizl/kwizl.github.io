@@ -81,7 +81,7 @@ Authorization does not move the actual money; it simply locks the funds. At the 
 
 The payment network acts as the clearing house, calculating the net debit and credit positions across all participating banks. It then interfaces with a settlement system (typically a central bank RTGS architecture) to execute the final, irrevocable transfer of funds from the issuer’s reserve pool to the acquirer's reserve pool. For further reading on this refer to this prrevious article [Messages, Clearing & Settlement/](https://kwizl.github.io/posts/Messages-Clearing-Settlement/)
 
-### Actors in the Payment End to End
+### Actors in the End to End Payment
 
 ![e2e_actors.png](../assets/img/Payment-Chains/e2e_actors.png)
 
