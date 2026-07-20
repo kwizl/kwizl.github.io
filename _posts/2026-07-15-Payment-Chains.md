@@ -7,7 +7,7 @@ tags: [Finance, Banking]
 
 ## Introduction
 
-This mainly pertains to the architecture of payment networks. It is in this space that clearing and settlement process decisions are made.
+This mainly pertains to the architecture of payment networks. This stage involves moving funds from the payer to a payee for cross-border or complex domestic transactions, even where banks do not share a direct relationship. Payment Chains also facilitate how clearing and settlement process decisions are made.
 
 ## Closed Loop
 
