@@ -11,9 +11,9 @@ This mainly pertains to the architecture of payment networks. It is in this spac
 
 ## Closed Loop
 
-It is also known as a three-party model which controls every stage of the transaction lifecycle. This loop connects the customers (Merchants/Consumers) directly with the payment system. All types of customers must join the payment system as this is being managed as a centralized system.
+It is also known as a three-party model which controls every stage of the transaction lifecycle. This loop connects the customer(Merchant or Consumer) directly with the payment system. All types of customers must join the payment system as this is being managed as a centralized system.
 
-In this system transactions are executed as internal database updates (book transfers) within a single ecosystem, completely bypassing external interbank rails like Visa, Mastercard Any changes and new features can be introduced faster but growth is limited since both merchants and consumers must join. eg. Paypal, American Express.
+In this system transactions are executed as internal database updates (book transfers) within a single ecosystem, completely bypassing external interbank rails like Visa, Mastercard Any changes and new features can be introduced faster but growth is limited since both merchants and customers must join. eg. Paypal, American Express.
 
 ### Architecture
 
@@ -38,11 +38,11 @@ Because the platform acts as the single source of truth, it avoids the extensive
 #### Disadvantages
 
 - The platform is useless to consumers if merchants don't build integrations to accept it, and useless to merchants if consumers don't open accounts.
-- **Regulatory Custody Overhead:** Storing customer funds on a single central ledger requires registering as a Money Services Business (MSB) or partnering with a licensed custodial bank to hold the pooled reserves in an omnibus account.
+- **Regulatory Custody Overhead:** Storing consumer funds on a single central ledger requires registering as a Money Services Business (MSB) or partnering with a licensed custodial bank to hold the pooled reserves in an omnibus account.
 
 ## Open Loop
 
-It is also known as a four-party model. It connects customers (Consumers/Merchants) with the payment system through a bank in the middle layer. All transactions would happen through a bank and it allows them to interact with any other bank without having a direct relationship. It operates as a decentralized financial ecosystem where multiple independent institutions route, clear, and settle transactions using a shared, standardized network infrastructure. Growth is faster as Merchants and Consumers do not have to join the same bank, but there is no guarantee that new features would reach them faster eg. Visa, Mastercard, Credit/Debit Transfers, Cheque.
+It is also known as a four-party model. It connects customers with the payment system through a bank in the middle layer. All transactions would happen through a bank and it allows them to interact with any other bank without having a direct relationship. It operates as a decentralized financial ecosystem where multiple independent institutions route, clear, and settle transactions using a shared, standardized network infrastructure. Growth is faster as Merchants and Consumers do not have to join the same bank, but there is no guarantee that new features would reach them faster eg. Visa, Mastercard, Credit/Debit Transfers, Cheque.
 
 Unlike a closed-loop system, where a single entity holds the database keys for both the buyer and the seller, an open-loop system allows a consumer holding an account at Bank A to effortlessly purchase goods from a merchant who banking coordinates with Bank B.
 
@@ -87,11 +87,11 @@ The payment network acts as the clearing house, calculating the net debit and cr
 
 #### Forwarding Agent
 
-- Holds a relationship with a customer but does not hold an account. Initiates a payment request on behalf of a customer or forwards the already initiated payment request to the debtor agent. Since transaction is just passing through, accounting entry is not required.
+- Holds a relationship with a consumer but does not hold an account. Initiates a payment request on behalf of a consumer or forwards the already initiated payment request to the debtor agent. Since transaction is just passing through, accounting entry is not required.
 
 #### Debtor Agent
 
-- Sender bank or originating bank. This is the bank which holds an account of the customer who is initiating any outward payment transactions.
+- Sender/Originating/Payer bank. This is the bank which holds an account of the consumer who is initiating any outward payment transactions.
 
 #### Instructing Agent
 
@@ -111,4 +111,4 @@ The payment network acts as the clearing house, calculating the net debit and cr
 
 #### Creditor Agent
 
-- This is the Receiving Bank. It holds the account of the customer who is receiving any inward payment transactions and is the end of the interbank payment chain.
+- This is the Receiving/Beneficiary/Payee Bank. It holds the account of the consumer who is receiving any inward payment transactions and is the end of the interbank payment chain.
