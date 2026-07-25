@@ -61,4 +61,4 @@ Transaction is processed and an individual transaction. It is used to process th
 
 ### Net Settlement
 
-Processing of Batch Transaction, and only the net difference is transferred at the end of the settlement cycle eg. ECS, SEPA DD, SEPA CT, BACS. For further reading reward this previous article: [https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement](https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement)
+Processing of Batch Transaction, and only the net difference is transferred at the end of the settlement cycle eg. SEPA DD, SEPA CT, BACS. For further reading reward this previous article: [https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement](https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement)
