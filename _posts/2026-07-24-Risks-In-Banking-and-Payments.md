@@ -156,14 +156,14 @@ Banks handle millions of messages every day across systems like SWIFT and ISO 20
 
 Ensuring the person who initiates a high-value transaction or code deployment cannot be the person who approves or clears it.
 
-1. **Risk & Control Self-Assessments**
+2. **Risk & Control Self-Assessments**
 
 Proactively find system vulnerabilities, alongside tracking **Key Risk Indicators** (e.g., system downtime percentages, unreconciled ledger items).
 
-1. **Failover Protocols**
+3. **Failover Protocols**
 
 Have protocols to ensure core banking services can fail over to secondary infrastructure instantly during major outages.
 
-1. **Investing in cybersecurity**
+4. **Investing in cybersecurity**
 
 Implementation of proper technical security systems and maintenance.
