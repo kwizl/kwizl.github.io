@@ -57,8 +57,8 @@ This determines how and when funds are transferred and finalized between parties
 
 ### Gross Settlement
 
-Transaction is processed and an individual transaction. It is used to process the High Value Transactions but now Low value Transactions such as Instant Payment are also being processed in Gross Settlement, T2, CHAPS. For further reading reward this previous article; [gross settlement](https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement)
+Transaction is processed and an individual transaction. It is used to process the High Value Transactions but now Low value Transactions such as Instant Payment are also being processed in Gross Settlement, T2, CHAPS.
 
 ### Net Settlement
 
-Processing of Batch Transaction, and only the net difference is transferred at the end of the settlement cycle eg. SEPA DD, SEPA CT, BACS. For further reading reward this previous article: [net settlement](https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement)
+Processing of Batch Transaction, and only the net difference is transferred at the end of the settlement cycle eg. SEPA DD, SEPA CT, BACS. 
