@@ -1,9 +1,3 @@
----
-title: Payment Classification Systems
-categories: [Payments, Banking]
-tags: [Finance, Banking]
----
-
 ## Overview
 
 Payment classification describes the lifecycle of a transaction consisting of three stages: **Location, Initiation, and Settlement.**
