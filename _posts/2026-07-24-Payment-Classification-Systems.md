@@ -45,7 +45,7 @@ The payment request is initiated by the debtor/payer. Money moves from the debto
 
 ### Pull
 
-The payment request is initiated by the creditor/payee. Money moves from the debtor's account to the creditor's account. In [](http://account.In)this process, there needs to be an authorization from the payer.
+The payment request is initiated by the creditor/payee. Money moves from the debtor's account to the creditor's account. In this process, there needs to be an authorization from the payer.
 
 ### Collaborative
 
