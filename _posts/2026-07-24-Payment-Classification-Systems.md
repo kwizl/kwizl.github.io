@@ -1,6 +1,5 @@
 ---
 title: Payment Classification Systems
-date: 2026-07-24 12:00:00 +0300
 categories: [Payments, Banking]
 tags: [Finance, Banking]
 ---
