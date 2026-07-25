@@ -134,19 +134,19 @@ The possibility of a human error, a technical error, or any issues in the proces
 
 ### Key Pillars of Modern Operational Risk
 
-#### 1. Cyber Risk and System Resilience
+**1. Cyber Risk and System Resilience**
 
 As banks have shifted away from physical branches toward digital-first, cloud-native infrastructures, cyber and technology risk has become the dominant subset of operational risk.
 
 A single logic bug, database corruption during migration, or DDoS attack can instantly lock millions of customers out of their accounts, paralyze real-time settlement rails (like RTGS), and result in severe regulatory penalties alongside lasting reputational damage.
 
-#### 2. The People Component (Rogue Traders & Errors)
+**2. The People Component (Rogue Traders & Errors)**
 
 Human behavior remains a major operational vulnerability. This spans from simple transaction data entry mistakes to complex, intentional fraud designed to bypass internal controls.
 
 An example is **Knight Capital (2012).** They lost $440 million in 45 minutes because of a faulty software deployment that left legacy code active on a production server, highlighting the extreme risk of automated execution failures.
 
-#### 3. Data Integrity and Regulatory Compliance
+**3. Data Integrity and Regulatory Compliance**
 
 Banks handle millions of messages every day across systems like SWIFT and ISO 20022. If data mappings fail or if transaction monitoring systems break down, the operational cost isn't just a missed payment; it can mean billions of dollars in regulatory fines for anti-money laundering (AML) and sanctions compliance failures.
 
