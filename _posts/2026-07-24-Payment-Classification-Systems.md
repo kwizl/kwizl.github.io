@@ -31,9 +31,9 @@ It is processed mainly via Swift, which is a global messaging network. Some of t
 
 ### Regional
 
-A payment system that processes E2E payment transactions with a defined set of countries that are under a specific economic region. A single predetermined currency is used. Eg. SEPA(T@, TIPS, STEPS), Equens, Core STET (France and Belgium) and PAPSS (Pan-African Payment and Settlement System). They support trade agreements by reducing friction in regional commerce and enable near-real-time settlement, lower and local currency use.
+A payment system that processes E2E payment transactions with a defined set of countries that are under a specific economic region. A single predetermined currency is used. Eg. SEPA(TIPS, STEPS), Equens, Core STET (France and Belgium) and PAPSS (Pan-African Payment and Settlement System). They support trade agreements by reducing friction in regional commerce and enable near-real-time settlement, lower and local currency use.
 
-Regional Payment Integration has a platform where participants connect directly to support domestic and cross-border payments. Although this system lightens the burden of ccross-border payments, it has its own challenges. It has difficulty in harmonizing regulations and standards since it operates on different jurisdictions. It also has issues in maintaining sufficient liquidity.
+Regional Payment Integration has a platform where participants connect directly to support domestic and cross-border payments. Although this system lightens the burden of cross-border payments, it has its own challenges. It has difficulty in harmonizing regulations and standards since it operates on different jurisdictions. It also has issues in maintaining sufficient liquidity.
 
 ## Initiation
 
@@ -57,8 +57,8 @@ This determines how and when funds are transferred and finalized between parties
 
 ### Gross Settlement
 
-Transaction is processed and an individual transaction. It is used to process the High Value Transactions but now Low value Transactions such as Instant Payment are also being processed in Gross Settlement, T2, CHAPS. For further reading reward this previous article: [https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement](https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement)
+It is used to process the High Value Transactions but now Low value Transactions such as Instant Payment are also being processed in Gross Settlement, T2, CHAPS. For further reading reward this previous article: [https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement](https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement)
 
 ### Net Settlement
 
-Processing of Batch Transaction, and only the net difference is transferred at the end of the settlement cycle eg. SEPA DD, SEPA CT, BACS. For further reading reward this previous article: [https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement](https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement)
+It processes Batch Transactions, and only the net difference is transferred at the end of the settlement cycle eg. SEPA DD, SEPA CT, BACS. For further reading reward this previous article: [https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement](https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement)
