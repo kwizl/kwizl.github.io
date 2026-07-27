@@ -57,7 +57,7 @@ This determines how and when funds are transferred and finalized between parties
 
 ### Gross Settlement
 
-It is used to process the High Value Transactions but now Low value Transactions such as Instant Payment are also being processed in Gross Settlement, T2, CHAPS. For further reading reward this previous article: [https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement](https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement)
+It is used to process the High Value Transactions but now Low Value Transactions such as Instant Payment are also being processed in Gross Settlement, T2, CHAPS. For further reading reward this previous article: [https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement](https://kwizl.github.io/posts/Messages-Clearing-Settlement/#settlement)
 
 ### Net Settlement
 
