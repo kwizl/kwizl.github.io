@@ -1,5 +1,5 @@
 ---
-title: Risks in Banking and Payments
+title: Transactions in Banking and Payments
 date: 2026-08-04 10:00:00 +0300
 categories: [Payments, Banking]
 tags: [Finance, Banking]
