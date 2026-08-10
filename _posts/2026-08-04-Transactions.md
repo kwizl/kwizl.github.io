@@ -138,7 +138,7 @@ This is a flow of returning the money back to the debtor by a creditor agent aft
 
 ### Reversal
 
-This request is initiated by a creditor to their creditor agent. It is requested after the settlement date. Clearing and Settlement executes the fund movement from the creditor agent’s settlement account to the debtor agent’s settlement account. Debtor agent credits back the debtor account
+This request is initiated by a creditor to their creditor agent. It is requested after the settlement date. Clearing and Settlement executes the fund movement from the creditor agent’s settlement account to the debtor agent’s settlement account. Debtor agent credits back the debtor account.
 
 ```
 [Payment Initiated] ──> (Bank Validation Fails) ───────> REJECT
