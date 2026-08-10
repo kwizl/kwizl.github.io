@@ -11,33 +11,31 @@ In this article, we will delve into the flow of money transactions across the ba
 
 ## Credit Transfer
 
-This is the request initiated by a debtor; hence, it is a push transfer transaction where a payer (debtor) instructs their bank to move money from their account directly into the payee’s (creditor’s) account. Usually, the creditor gets money within a few seconds up to a few days based on the chosen credit transfer method. The money is irrevocable once it is credited to the beneficiary. Transaction charges are applicable as per the Bank’s norms and chosen credit transfer method. It can be settled by either gross or net settlement method. Most common use cases are paying a vendor, salary credit, A2A Transfer, Transfer to Friends
+This is the request initiated by a debtor; hence, it is a push transfer transaction where a payer (debtor) instructs their bank to move money from their account directly into the payee’s (creditor’s) account. Usually, the creditor gets money within a few seconds up to a few days based on the chosen credit transfer method. The money is irrevocable once it is credited to the beneficiary. Transaction charges are applicable as per the bank’s norms and chosen credit transfer method. It can be settled by either gross or net settlement method. Most common use cases are paying a vendor, salary credit, and A2A Transfer.
 
-In the SWIFT ecosystem, a **Credit Transfer** is an instruction sent by a debtor (the sender) to move funds from their account to a creditor (the receiver). Instead of the receiver "pulling" the money (like a direct debit), the sender "pushes" it through the banking network.
-
-With SWIFT's global migration to the **ISO 20022 messaging standard**, credit transfers are primarily handled using **pacs (Payment Clearing and Settlement)** messages, replacing the legacy MT (Message Type) formats.
+In the SWIFT ecosystem, a **Credit Transfer** is an instruction sent by a debtor (the sender) to move funds from their account to a creditor (the receiver). Instead of the receiver "pulling" the money (like a direct debit), the sender "pushes" it through the banking network. With SWIFT's global migration to the **ISO 20022 messaging standard**, credit transfers are primarily handled using **pacs (Payment Clearing and Settlement)** messages, replacing the legacy MT (Message Type) formats.
 
 #### How It Works: The Core Messaging Flow
 
 When a credit transfer crosses borders or distinct banking systems, it typically involves a chain of financial institutions. Under ISO 20022, the process follows a structured sequence.
 
-**1.Payment Initiation**
+**1. Payment Initiation**
 
-The corporate client or individual initiates the transfer, sending a **pain.001 (Payment Initiation)** message to their bank (Bank A). This contains the ultimate debtor, ultimate creditor, amount, and currency details.
+The corporate client or individual initiates the transfer, sending a **pain.001 (Payment Initiation)** message to their bank (Bank A). This contains the debtor, creditor, amount, and currency details.
 
-**2.Interbank Settlement Instruction**
+**2. Interbank Settlement Instruction**
 
-Bank A processes the request. If the funds need to move to Bank B in another country, Bank A routes a **pacs.008 (FI to FI Customer Credit Transfer)** message through the SWIFT network. This is the core message that actually instructs the movement of the customer's funds between the financial institutions.
+Bank A processes the request. If the funds need to move to Bank B in another country, Bank A routes a **pacs.008 (Financial Institution to Financial Institution Customer Credit Transfer)** message through the SWIFT network. This is the core message that actually instructs the movement of the customer's funds between the financial institutions.
 
-**3.Cover Payments**
+**3. Cover Payments**
 
 If Bank A and Bank B don't have a direct relationship (nostro/vostro accounts), the message travels via an intermediary correspondent bank. A **pacs.009 (Financial Institution Credit Transfer)** is used to move the actual liquidity across the settlement accounts, while the pacs.008 carries the underlying commercial data.
 
-**4.Payment Status Report**
+**4. Payment Status Report**
 
 Throughout the journey, banks use the **pacs.002 (Payment Status Report)** to reject, accept, or flag transactions for compliance matching (e.g., AML/Sanctions screening).
 
-**5.Cash Management Advice**
+**5. Cash Management Advice**
 
 Once Bank B receives the funds and the **pacs.008** clears, it credits the final beneficiary's account and transmits a **camt.054 (Bank-to-Customer Debit/Credit Notification)** to inform them the money has arrived.
 
@@ -58,19 +56,19 @@ Book Transfer:
 
 From a software and core banking perspective, a book transfer is executed as a single, atomic database transaction wrapped in an ACID-compliant block (Atomicity, Consistency, Isolation, Durability).
 
-**1.Debit Account Verification:**
+**1. Debit Account Verification:**
 
 The core banking system verifies that the sender's account exists, is active, and possesses sufficient available funds to cover the transaction amount.
 
-**2.Acquire Ledger Locks**
+**2. Acquire Ledger Locks**
 
 The database engine places an exclusive row lock on both the sender's and receiver's balance records to prevent race conditions (such as simultaneous withdrawals).
 
-**3.Atomic Balance Update**
+**3. Atomic Balance Update**
 
 The ledger engine executes two simultaneous actions inside a single database commit: it decrements the sender's balance and increments the receiver's balance by the exact same amount.
 
-**4.Audit Trail Generation**
+**4. Audit Trail Generation**
 
 The system generates matching internal transaction logs, recording a debit and a credit journal entry pointing to the same internal transaction identifier. No messaging payloads (like SWIFT `pacs.008`) are generated or sent to external rails.
 
