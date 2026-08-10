@@ -21,23 +21,23 @@ With SWIFT's global migration to the **ISO 20022 messaging standard**, credit tr
 
 When a credit transfer crosses borders or distinct banking systems, it typically involves a chain of financial institutions. Under ISO 20022, the process follows a structured sequence.
 
-1. **Payment Initiation**
+**1.Payment Initiation**
 
 The corporate client or individual initiates the transfer, sending a **pain.001 (Payment Initiation)** message to their bank (Bank A). This contains the ultimate debtor, ultimate creditor, amount, and currency details.
 
-2. **Interbank Settlement Instruction**
+**2.Interbank Settlement Instruction**
 
 Bank A processes the request. If the funds need to move to Bank B in another country, Bank A routes a **pacs.008 (FI to FI Customer Credit Transfer)** message through the SWIFT network. This is the core message that actually instructs the movement of the customer's funds between the financial institutions.
 
-3. **Cover Payments**
+**3.Cover Payments**
 
 If Bank A and Bank B don't have a direct relationship (nostro/vostro accounts), the message travels via an intermediary correspondent bank. A **pacs.009 (Financial Institution Credit Transfer)** is used to move the actual liquidity across the settlement accounts, while the pacs.008 carries the underlying commercial data.
 
-4. **Payment Status Report**
+**4.Payment Status Report**
 
 Throughout the journey, banks use the **pacs.002 (Payment Status Report)** to reject, accept, or flag transactions for compliance matching (e.g., AML/Sanctions screening).
 
-5. **Cash Management Advice**
+**5.Cash Management Advice**
 
 Once Bank B receives the funds and the **pacs.008** clears, it credits the final beneficiary's account and transmits a **camt.054 (Bank-to-Customer Debit/Credit Notification)** to inform them the money has arrived.
 
@@ -58,19 +58,19 @@ Book Transfer:
 
 From a software and core banking perspective, a book transfer is executed as a single, atomic database transaction wrapped in an ACID-compliant block (Atomicity, Consistency, Isolation, Durability).
 
-1. **Debit Account Verification:**
+**1.Debit Account Verification:**
 
 The core banking system verifies that the sender's account exists, is active, and possesses sufficient available funds to cover the transaction amount.
 
-2. **Acquire Ledger Locks**
+**2.Acquire Ledger Locks**
 
 The database engine places an exclusive row lock on both the sender's and receiver's balance records to prevent race conditions (such as simultaneous withdrawals).
 
-3. **Atomic Balance Update**
+**3.Atomic Balance Update**
 
 The ledger engine executes two simultaneous actions inside a single database commit: it decrements the sender's balance and increments the receiver's balance by the exact same amount.
 
-4. **Audit Trail Generation**
+**4.Audit Trail Generation**
 
 The system generates matching internal transaction logs, recording a debit and a credit journal entry pointing to the same internal transaction identifier. No messaging payloads (like SWIFT `pacs.008`) are generated or sent to external rails.
 
@@ -92,23 +92,23 @@ Because direct debits are "pull" mechanisms, they carry an inherent risk of frau
 
 Under the **ISO 20022** standard, direct debits shift away from legacy flat files to **pain (Payment Initiation)** and **pacs (Payment Clearing and Settlement)** XML message formats.
 
-1. **Collection Initiation**
+**1.Collection Initiation**
 
 The creditor generates a batch file containing the mandate references, amounts, and debtor bank account details (like IBANs). They upload this file to their bank (Bank A) using a **pain.008 (Customer Direct Debit Initiation)** message.
 
-2. **Debtor Advise**
+**2.Debtor Advise**
 
 Regulations usually require the creditor to notify the debtor (typically 14 days in advance, though often shortened by contract) of the exact amount and date the funds will be pulled.
 
-3. **Interbank Settlement Request**
+**3.Interbank Settlement Request**
 
 Bank A routes the collection request into an Automated Clearing House (ACH) or clearing network using a **pacs.003** message. This message is routed to the debtor's bank (Bank B).
 
-4. **Validation & Debit**
+**4.Validation & Debit**
 
 Bank B validates the mandate reference. It verifies if the debtor has sufficient funds. If everything passes, Bank B debits the debtor's account. If it fails (e.g., *Insufficient Funds* or *Mandate Expired*), Bank B generates a **pacs.002 (Payment Status Report)** indicating a **Reject**.
 
-5. **Clearing & Finality**
+**5.Clearing & Finality**
 
 The clearing house nets the positions between Bank A and Bank B. The funds are credited to Bank A, which then updates the creditor’s account balance.
 
