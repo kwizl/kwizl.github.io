@@ -78,7 +78,7 @@ The system generates matching internal transaction logs, recording a debit and a
 2. **Intra-Company Closed-Loop Ecosystems:** Peer-to-peer applications or digital wallets where users hold balances inside a single underlying custodial banking partner (e.g., two users transferring money to each other inside an app backed by the same ledger).
 3. **Internal FX Operations:** A corporate entity executing a currency exchange between its own multi-currency accounts held at a single global treasury bank.
 
-## Direct Debit Transfer
+## Debit Transfer
 
 This request is initiated by the creditor via the Creditor Agent to collect payments. Mostly recurring payments. Hence, it is a pull transfer. The debtor must provide authorization/consent to the creditor for debiting the account. Usually, the creditor gets money in one or two days from the due date. Direct Debit notification must be sent to the debtor before the due date, and the debtor may dispute the transaction in case the account is debited by mistake. Uses are paying utility bills, subscriptions.
 
