@@ -7,13 +7,13 @@ tags: [Finance, Banking]
 
 ## Introduction
 
-In this article, we will delve into the flow of money transactions across the banking world. We will discuss the various types of money transactions and what each entails.  A transaction is an event that creates or settles an obligation involving money.
+In this article, we will delve into the flow of money across the banking world. We will discuss the various types of money transactions and what each entails. A transaction can be described as an event that creates or settles an obligation involving money.
 
 ## Credit Transfer
 
 This is the request initiated by a debtor; hence, it is a push transfer transaction where a payer (debtor) instructs their bank to move money from their account directly into the payee’s (creditor’s) account. Usually, the creditor gets money within a few seconds up to a few days based on the chosen credit transfer method. The money is irrevocable once it is credited to the beneficiary. Transaction charges are applicable as per the bank’s norms and chosen credit transfer method. It can be settled by either gross or net settlement method. Most common use cases are paying a vendor, salary credit, and A2A Transfer.
 
-In the SWIFT ecosystem, a **Credit Transfer** is an instruction sent by a debtor (the sender) to move funds from their account to a creditor (the receiver). Instead of the receiver "pulling" the money (like a direct debit), the sender "pushes" it through the banking network. With SWIFT's global migration to the **ISO 20022 messaging standard**, credit transfers are primarily handled using **pacs (Payment Clearing and Settlement)** messages, replacing the legacy MT (Message Type) formats.
+In the SWIFT ecosystem, a **Credit Transfer** is an instruction sent by a debtor (the sender) to move funds from their account to a creditor (the receiver). Instead of the receiver "pulling" the money (like a direct debit), the sender "pushes" it through the banking network. With SWIFT's global migration to the **ISO 20022 Messaging Standard**, credit transfers are primarily handled using **pacs (Payment Clearing and Settlement)** messages, replacing the legacy MT (Message Type) formats.
 
 #### How It Works: The Core Messaging Flow
 
@@ -41,7 +41,7 @@ Once Bank B receives the funds and the **pacs.008** clears, it credits the final
 
 ## Book Transfer
 
-It is similar to both Credit/Debit Transfer. Because both the sender (debtor) and the receiver (creditor) hold accounts at the same bank, the money never actually leaves the institution. The transfer is completed entirely by updating the bank's internal database. It is irrevocable once money is credited to the beneficiary. Usually, no charges apply to these transactions. An example is a savings account to a loan account in the same bank.
+It is similar to both Credit/Debit Transfer since both the sender (debtor) and the receiver (creditor) hold accounts at the same bank, the money never actually leaves the institution. The transfer is completed entirely by updating the bank's internal database. It is irrevocable once money is credited to the beneficiary. Usually, no charges apply to these transactions. An example is a savings account to a loan account in the same bank.
 
 #### Architectural Mechanics
 
@@ -82,7 +82,7 @@ The system generates matching internal transaction logs, recording a debit and a
 
 This request is initiated by the creditor via the Creditor Agent to collect payments. Mostly recurring payments. Hence, it is a pull transfer. The debtor must provide authorization/consent to the creditor for debiting the account. Usually, the creditor gets money in one or two days from the due date. Direct Debit notification must be sent to the debtor before the due date, and the debtor may dispute the transaction in case the account is debited by mistake. Uses are paying utility bills, subscriptions.
 
-A bank will never execute a direct debit unless a legal and technical framework is in place. This framework is governed by a **Mandate** (or Pre-Authorized Debit Agreement). A **Mandate** formal authorization signed by the debtor that grants the creditor permission to initiate collections from their bank account. It specifies whether the withdrawals are for fixed or variable amounts and defines the frequency (e.g., monthly utility bills).
+A bank will never execute a direct debit unless a legal and technical framework is in place. This framework is governed by a **Mandate** (or Pre-Authorized Debit Agreement). A **Mandate** is a formal authorization signed by the debtor that grants the creditor permission to initiate collections from their bank account. It specifies whether the withdrawals are for fixed or variable amounts and defines the frequency (e.g., monthly utility bills).
 
 #### Transaction Lifecycle
 
@@ -116,7 +116,7 @@ When a request is sent by the creditor to the debtor using pain.013 message, the
 
 ## R-Transactions
 
-These transactions are considered a negative flow because it is for either rejecting ot returning or recalling a previous transaction. These flows cannot be processed independently, it must be used against a previous payment transaction. When a payment rail (like SEPA or NACHA) or a messaging system (like ISO 20022) encounters an exception, it marks it with a specific operational code beginning with the letter **"R"**. While they occur across both push and pull networks, handling R-transactions is arguably the most complex aspect of building core banking systems, particularly for Direct Debits.
+These transactions are considered a negative flow. It is for either rejecting, returning or recalling a previous transaction. These flows cannot be processed independently, they must be used against a previous payment transaction. When a payment rail (like SEPA or NACHA) or a messaging system (like ISO 20022) encounters an exception, it marks it with a specific operational code beginning with the letter **"R"**. While they occur across both push and pull networks, handling R-transactions is arguably the most complex aspect of building core banking systems, particularly for Direct Debits.
 
 **Push Payments:**
 
@@ -126,15 +126,15 @@ These transactions are considered a negative flow because it is for either rejec
 
 ### Reject
 
-The rejection of the message can be divided into two; Business Rejection or Technical Rejection. The Rejection can be done at any point in the payment chain by any of the Agents or Clearing System as long as the message is not meeting the criteria either for Business Validation or Technical Validation. pacs.002 status report is sent to the sender of the message with reject reason and payment flow is stopped right there.
+The rejection of the message can be divided into two; Business Rejection or Technical Rejection. The rejection can be done at any point in the payment chain by any of the Agents or Clearing System as long as the message is not meeting the criteria either for Business Validation or Technical Validation. pacs.002 status report is sent to the sender of the message with reject reason and payment flow is stopped right there.
 
 ### Recall
 
-This request is initiated by the dentor agent to cancel the previously sent value message by usign camt.056 message. The value message is cancelled only if money is not setttled between the naks otherwise, a return process is follwoed. If creditor agnet received this recall request, before crediting the beneficiary then a return payment is initiated on their own and it is up to the creditor to accept or decline the request. Recall Request os not always guaranteeing the amount to be returned from the creditor.
+This request is initiated by the debtor agent to cancel the previously sent value message by using camt.056 message. The value message is cancelled only if money is not settled between the sender and receiver otherwise, a return process is followed. If the creditor agent received this recall request, before crediting the beneficiary then a return payment is initiated on their own and it is up to the creditor to accept or decline the request. Recall Request is not always guaranteeing the amount to be returned from the creditor.
 
 ### Return
 
-This is a flow of returning the money back to the debtor by a creditor agent after a settlment using pacs.004 message. Return can happen for two reasons, its either due to the pacs.008 message rejeccction by the creditor agent or for honoring the recall request sent by the dentor agent. The role of an actor in the pacs.008 original message flow is reversed in the return flow. Creditor Agent may charge a fee for returning a payment hence dentor return amount can be different from the original amount. Message Id, Interbank Settlement Date, Amount, Instruction Id, these are all some of the data is used to match the previously received pacs.008 for which return payment to be generated.
+This is a flow of returning the money back to the debtor by a creditor agent after a settlement using pacs.004 message. Return can happen for two reasons, its either due to the pacs.008 message rejeccction by the creditor agent or for honoring the recall request sent by the debtor agent. The role of an actor in the pacs.008 original message flow is reversed in the return flow. Creditor Agent may charge a fee for returning a payment hence debtor return amount can be different from the original amount. Message Id, Interbank Settlement Date, Amount, Instruction Id, these are all some of the data is used to match the previously received pacs.008 for which return payment to be generated.
 
 ### Reversal
 
